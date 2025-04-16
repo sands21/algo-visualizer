@@ -57,7 +57,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     userArray: null,
     userTarget: null,
     userGraph: null,
-    theme: 'light', // Default theme
+    theme: 'dark', // Default theme
   });
 
   // Effect to apply the theme data attribute to the HTML element
