@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import VisualizationArea from './components/VisualizationArea';
@@ -29,6 +30,7 @@ function App() {
           </div>
         </main>
       </div>
+      <Analytics />
     </div>
   );
 }
