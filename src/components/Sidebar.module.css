@@ -1,0 +1,102 @@
+.sidebar {
+  width: 18rem; /* w-72 */
+  background-color: #ffffff; /* bg-white */
+  border-right: 1px solid #e2e8f0; /* border-r border-slate-200 */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+  overflow-y: auto;
+  transition: background-color 0.2s, border-color 0.2s;
+  flex-shrink: 0; /* flex-shrink-0 */
+}
+
+html[data-theme='dark'] .sidebar {
+  background-color: #1e293b; /* dark:bg-slate-800 */
+  border-right-color: #334155; /* dark:border-slate-700 */
+}
+
+.container {
+  padding: 1.5rem; /* p-6 */
+}
+
+.title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #0f172a; /* text-slate-900 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+html[data-theme='dark'] .title {
+  color: #f1f5f9; /* dark:text-white */
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space-y-8 */
+}
+
+.categoryTitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #64748b; /* text-slate-500 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+html[data-theme='dark'] .categoryTitle {
+  color: #94a3b8; /* dark:text-slate-400 */
+}
+
+.algorithmList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+}
+
+.algorithmButton {
+  width: 100%;
+  text-align: left;
+  padding: 0.625rem 1rem; /* px-4 py-2.5 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  transition: all 0.15s ease-in-out;
+  border: none;
+  cursor: pointer;
+  background-color: transparent; /* Default */
+  color: #334155; /* text-slate-700 */
+}
+
+html[data-theme='dark'] .algorithmButton {
+  color: #cbd5e1; /* dark:text-slate-300 */
+}
+
+.algorithmButton:hover {
+  background-color: #f1f5f9; /* hover:bg-slate-100 */
+}
+
+html[data-theme='dark'] .algorithmButton:hover {
+  background-color: #334155; /* dark:hover:bg-slate-700 */
+}
+
+.algorithmButtonSelected {
+  background-color: #4f46e5; /* bg-indigo-500 */
+  color: #ffffff !important; /* text-white, !important to override hover */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+}
+
+html[data-theme='dark'] .algorithmButtonSelected {
+  background-color: #4f46e5; /* Keep indigo for dark mode selected */
+  color: #ffffff !important;
+}
+
+/* Prevent hover effect on selected button */
+.algorithmButtonSelected:hover {
+  background-color: #4f46e5;
+}
+html[data-theme='dark'] .algorithmButtonSelected:hover {
+  background-color: #4f46e5;
+}

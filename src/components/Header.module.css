@@ -1,0 +1,100 @@
+.header {
+  background-color: #ffffff; /* bg-white */
+  color: #0f172a; /* text-slate-900 */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+html[data-theme='dark'] .header {
+  background-color: #1e293b; /* dark:bg-slate-800 */
+  color: #f1f5f9; /* dark:text-white */
+}
+
+.container {
+  max-width: 1280px; /* Approximation for container */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem; /* py-4 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* space-x-3 */
+}
+
+.logoIconContainer {
+  background-color: #4f46e5; /* bg-indigo-500 */
+  color: #ffffff; /* text-white */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  display: flex; /* Ensure icon inside is centered if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+}
+
+.title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+.themeToggleButton {
+  position: relative;
+  padding: 0.5rem; /* p-2 */
+  overflow: hidden;
+  border-radius: 9999px; /* rounded-full */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.themeToggleButton:hover {
+  background-color: #f1f5f9; /* hover:bg-slate-100 */
+}
+
+html[data-theme='dark'] .themeToggleButton:hover {
+  background-color: #334155; /* dark:hover:bg-slate-700 */
+}
+
+.themeToggleButton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #6366f1; /* focus:ring-2 focus:ring-indigo-500 */
+}
+
+.themeIconContainer {
+  position: relative;
+}
+
+.themeIcon {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+  transition: color 0.2s;
+}
+
+.moonIcon {
+  color: #475569; /* text-slate-600 */
+}
+.moonIcon:hover {
+  color: #0f172a; /* hover:text-slate-900 */
+}
+
+.sunIcon {
+  color: #fcd34d; /* text-yellow-300 */
+}
+.sunIcon:hover {
+  color: #fef08a; /* hover:text-yellow-200 */
+}

@@ -1,0 +1,42 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Equivalent to bg-slate-50 */
+  color: #0f172a; /* Equivalent to text-slate-900 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+html[data-theme='dark'] .appContainer {
+  background-color: #0f172a; /* Equivalent to dark:bg-slate-900 */
+  color: #f1f5f9; /* Equivalent to dark:text-slate-100 */
+}
+
+.mainLayout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem; /* Equivalent to p-8 */
+  gap: 2rem; /* Equivalent to gap-8 */
+  overflow: hidden;
+  border-top-right-radius: 0.75rem; /* Add rounding to match panels */
+}
+
+.panelsContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: single column */
+  gap: 2rem; /* Equivalent to gap-8 */
+}
+
+/* Equivalent to lg:grid-cols-2 */
+@media (min-width: 1024px) {
+  .panelsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
