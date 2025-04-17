@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# Algorithm Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application built with React and TypeScript to visualize common sorting, searching, and graph algorithms interactively. See algorithms come to life step-by-step!
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Algorithm Visualization:** Understand how different algorithms work by watching them execute on sample data.
+*   **Supported Algorithms:**
+    *   **Sorting:** Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort
+    *   **Searching:** Linear Search, Binary Search
+    *   **Graph:** Breadth-First Search (BFS), Depth-First Search (DFS)
+*   **Interactive Controls:**
+    *   Generate new random data sets.
+    *   Control execution: Play, Pause, Step Forward.
+    *   Adjust visualization speed.
+*   **Code Display:** See the corresponding code for the currently selected algorithm.
+*   **Responsive Design:** Adapts to different screen sizes for usability on desktop and mobile devices.
+*   **Dark Mode:** Switch between light and dark themes for comfortable viewing.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   **Frontend:** React, TypeScript
+*   **Build Tool:** Vite
+*   **Styling:** CSS Modules
+*   **State Management:** React Context API
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+*   Node.js (v18 or later recommended)
+*   npm (usually comes with Node.js) or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    ```
+    *(Replace `<your-repository-url>` with the actual URL)*
+2.  **Navigate to the project directory:**
+    ```bash
+    cd algo-visualizer
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    *or*
+    ```bash
+    yarn install
+    ```
+
+### Running the Application
+
+```bash
+npm run dev
+```
+*or*
+```bash
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will start the development server, typically at `http://localhost:5173`. Open this URL in your web browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How to Use
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1.  **Select an Algorithm:** Use the sidebar on the left to choose the algorithm category (Sorting, Searching, Graph) and then the specific algorithm you want to visualize.
+2.  **Generate Data:** Click the "Generate New Array" (or similar) button in the Control Panel to create a dataset.
+3.  **Control Visualization:**
+    *   Use the **Play/Pause** button to start or stop the automatic execution.
+    *   Use the **Step Forward** button to advance the algorithm one step at a time.
+    *   Adjust the **Speed** slider to control how fast the visualization runs.
+4.  **Observe:**
+    *   Watch the **Visualization Area** to see the algorithm manipulate the data structure.
+    *   Follow along with the highlighted lines in the **Code Panel** to see the corresponding code execution.
+
+---
+
+*(Optional: Add sections for Screenshots, Contributing Guidelines, or License information here if desired.)*

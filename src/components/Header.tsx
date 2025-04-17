@@ -1,10 +1,12 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
+// Import Bars3Icon for the hamburger menu
+import { SunIcon, MoonIcon, Bars3Icon } from '@heroicons/react/24/solid';
 import styles from './Header.module.css'; // Import the CSS module
 
 const Header: React.FC = () => {
-  const { state, toggleTheme } = useAppContext();
+  // Get toggleSidebar function from context
+  const { state, toggleTheme, toggleSidebar } = useAppContext();
 
   return (
     <header className={styles.header}>
@@ -18,9 +20,19 @@ const Header: React.FC = () => {
           <h1 className={styles.title}>Algorithm Visualizer</h1>
         </div>
 
-        {/* Theme toggle button */}
-        <button
-            onClick={toggleTheme}
+        <div className={styles.actionsContainer}> {/* Group buttons */}
+          {/* Hamburger Menu Button (for mobile) */}
+          <button
+            onClick={toggleSidebar}
+            className={styles.menuButton} // Add specific class for styling/hiding
+            aria-label="Toggle menu"
+          >
+            <Bars3Icon className={styles.menuIcon} />
+          </button>
+
+          {/* Theme toggle button */}
+          <button
+              onClick={toggleTheme}
             className={styles.themeToggleButton}
             aria-label="Toggle theme"
           >
@@ -31,7 +43,8 @@ const Header: React.FC = () => {
               <SunIcon className={`${styles.themeIcon} ${styles.sunIcon}`} />
             )}
           </div>
-        </button>
+          </button>
+        </div> {/* End actionsContainer */}
       </div>
     </header>
   );

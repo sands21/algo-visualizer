@@ -11,6 +11,7 @@ interface AppState {
   userTarget: number | null;
   userGraph: Record<number, number[]> | null;
   theme: 'light' | 'dark';
+  isSidebarOpen: boolean; // Added for sidebar toggle
 }
 
 // Define the shape of the context value (state + update functions)
@@ -26,6 +27,7 @@ interface AppContextType {
   setUserTarget: (target: number | null) => void; // Allow null
   setUserGraph: (graph: Record<number, number[]> | null) => void; // Allow null
   toggleTheme: () => void;
+  toggleSidebar: () => void; // Added for sidebar toggle
 }
 
 // Create the context with a default value
@@ -58,6 +60,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     userTarget: null,
     userGraph: null,
     theme: 'dark', // Default theme
+    isSidebarOpen: false, // Initial state for sidebar
   });
 
   // Effect to apply the theme data attribute to the HTML element
@@ -196,6 +199,14 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     });
   };
 
+  // Toggle sidebar visibility
+  const toggleSidebar = () => {
+    setState(prevState => ({
+      ...prevState,
+      isSidebarOpen: !prevState.isSidebarOpen,
+    }));
+  };
+
   // Value provided by the context
   const value = {
     state,
@@ -209,6 +220,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setUserTarget,
     setUserGraph,
     toggleTheme,
+    toggleSidebar, // Added toggle function
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

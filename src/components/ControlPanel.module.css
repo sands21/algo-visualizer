@@ -253,3 +253,20 @@ html[data-theme='dark'] .errorDisplay {
   border-color: #450a0a; /* dark:border-red-800 */
   color: #f87171; /* dark:text-red-400 */
 }
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 639px) { /* sm breakpoint */
+  .controlPanel {
+    padding: 1rem; /* p-4 */
+    gap: 1rem; /* space-y-4 */
+  }
+
+  .label {
+    font-size: 0.8125rem; /* Slightly smaller label */
+  }
+
+  .textArea {
+    padding: 0.625rem; /* p-2.5 */
+  }
+}

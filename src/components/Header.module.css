@@ -98,3 +98,58 @@ html[data-theme='dark'] .themeToggleButton:hover {
 .sunIcon:hover {
   color: #fef08a; /* hover:text-yellow-200 */
 }
+
+/* Container for action buttons (theme toggle, menu) */
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space-x-2 */
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+  display: none; /* Hidden by default on larger screens */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.375rem; /* rounded-md */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #475569; /* text-slate-600 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+html[data-theme='dark'] .menuButton {
+  color: #cbd5e1; /* dark:text-slate-300 */
+}
+
+.menuButton:hover {
+  background-color: #f1f5f9; /* hover:bg-slate-100 */
+  color: #0f172a; /* hover:text-slate-900 */
+}
+
+html[data-theme='dark'] .menuButton:hover {
+  background-color: #334155; /* dark:hover:bg-slate-700 */
+  color: #f1f5f9; /* dark:hover:text-white */
+}
+
+.menuButton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #6366f1; /* focus:ring-2 focus:ring-indigo-500 */
+}
+
+.menuIcon {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+}
+
+/* --- Responsive Styles --- */
+
+/* Show menu button on smaller screens */
+@media (max-width: 1023px) {
+  .menuButton {
+    display: inline-flex; /* Show the button */
+    align-items: center;
+    justify-content: center;
+  }
+}

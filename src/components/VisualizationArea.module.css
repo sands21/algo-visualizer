@@ -389,3 +389,35 @@ html[data-theme='dark'] .graphNodeVisited .graphNodeText {
 html[data-theme='dark'] .graphNodeCurrent .graphNodeText {
  fill: #fcd34d; /* yellow-300 */
 }
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 639px) { /* sm breakpoint */
+  .title {
+    font-size: 1.25rem; /* text-xl */
+  }
+
+  .placeholderTextLarge {
+    font-size: 1.125rem; /* text-lg */
+  }
+
+  .infoBoxValue {
+    font-size: 1rem; /* text-base */
+  }
+
+  .container {
+    padding: 1rem; /* p-4 */
+  }
+
+  .header {
+    margin-bottom: 1.5rem; /* mb-6 */
+  }
+
+  .infoGrid {
+    gap: 0.75rem; /* gap-3 */
+  }
+
+  .infoBox {
+    padding: 0.5rem; /* p-2 */
+  }
+}

@@ -100,3 +100,86 @@ html[data-theme='dark'] .algorithmButtonSelected {
 html[data-theme='dark'] .algorithmButtonSelected:hover {
   background-color: #4f46e5;
 }
+
+/* --- Responsive Styles --- */
+
+/* Overlay for closing sidebar on mobile */
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99; /* Below sidebar, above content */
+  cursor: pointer;
+}
+
+/* Close button for mobile */
+.closeButton {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 0.75rem; /* p-3 */
+  right: 0.75rem; /* p-3 */
+  background: none;
+  border: none;
+  font-size: 1.75rem; /* Larger close icon */
+  line-height: 1;
+  color: #64748b; /* text-slate-500 */
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101; /* Above sidebar content */
+}
+
+html[data-theme='dark'] .closeButton {
+  color: #94a3b8; /* dark:text-slate-400 */
+}
+
+.closeButton:hover {
+  color: #0f172a; /* text-slate-900 */
+}
+
+html[data-theme='dark'] .closeButton:hover {
+  color: #f1f5f9; /* dark:text-white */
+}
+
+
+/* Styles for screens smaller than 1024px */
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed; /* Take out of flow */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height */
+    z-index: 100; /* Above overlay and content */
+    transform: translateX(-100%); /* Hidden off-screen */
+    transition: transform 0.3s ease-in-out;
+    border-right: 1px solid #e2e8f0; /* Ensure border is visible */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Add shadow */
+  }
+
+  html[data-theme='dark'] .sidebar {
+    border-right-color: #334155; /* dark:border-slate-700 */
+  }
+
+  .sidebarOpen {
+    transform: translateX(0); /* Slide in */
+  }
+
+  /* Show overlay when sidebar is open on mobile */
+  .sidebarOpen + .overlay, /* If overlay is sibling */
+  .overlay { /* Direct styling if needed */
+     display: block; /* Show overlay */
+  }
+  /* Need to target overlay based on sibling relationship if structure is <Sidebar /><Overlay /> */
+  /* If structure is <><Overlay /><Sidebar /></> as implemented, need different approach */
+  /* Let's assume the structure is <><Overlay /><Sidebar /></> */
+  /* We'll control overlay display from the component based on isSidebarOpen */
+  /* The CSS above for .overlay handles the styling when display is block */
+
+
+  .closeButton {
+    display: block; /* Show close button */
+  }
+}

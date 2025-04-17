@@ -234,3 +234,29 @@ html[data-theme='dark'] .complexityTitle {
 html[data-theme='dark'] .complexityValue {
   color: #cbd5e1; /* dark:text-slate-300 */
 }
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 639px) { /* sm breakpoint */
+  .codePanel {
+    padding: 1rem; /* p-4 */
+  }
+
+  .title {
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 1rem; /* mb-4 */
+  }
+
+  .pseudocodeBody {
+    padding: 0.75rem; /* p-3 */
+    font-size: 0.8125rem; /* Slightly smaller code font */
+  }
+
+  .stepExplanationCard {
+    padding: 0.75rem; /* p-3 */
+  }
+
+  .complexityBox {
+    padding: 0.5rem; /* p-2 */
+  }
+}
