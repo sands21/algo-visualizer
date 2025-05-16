@@ -2,7 +2,6 @@ import { ArrayBar } from './ArrayBar';
 import { useSearching } from '../../context/SearchingContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import React from 'react';
 
 export const SearchVisualization = () => {
   const { 
@@ -122,15 +121,6 @@ export const SearchVisualization = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Target display - Removing this element as requested */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-accent/10 dark:bg-accent-dark/20 text-accent dark:text-accent-dark px-4 py-1 rounded-md text-sm font-semibold z-10"
-        >
-          Target: {target}
-        </motion.div> */}
 
         {/* Current operation visualization - specific to the algorithm */}
         <AnimatePresence>
