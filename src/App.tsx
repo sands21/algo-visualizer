@@ -1,38 +1,24 @@
-import { Analytics } from '@vercel/analytics/react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import VisualizationArea from './components/VisualizationArea';
-import ControlPanel from './components/ControlPanel';
-import CodePanel from './components/CodePanel';
-import styles from './App.module.css'; 
+import { Layout } from './components/ui/Layout';
+import { SortingPage } from './pages/SortingPage';
+import { SearchingPage } from './pages/SearchingPage';
+import { GraphPage } from './pages/GraphPage';
+import { TreePage } from './pages/TreePage';
+import { HomePage } from './pages/HomePage';
+import { ThemeProvider } from './context/ThemeContext';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'sorting' | 'searching' | 'graph' | 'tree'>('home');
+  
   return (
-    // Apply CSS module class for the main container
-    <div className={styles.appContainer}>
-      <Header />
-
-      {/* Apply CSS module class for the main layout flex container */}
-      <div className={styles.mainLayout}>
-        <Sidebar />
-
-        {/* Main Content Area */}
-        {/* Apply CSS module class for the main content area */}
-        <main className={styles.mainContent}>
-          {/* Visualization Area */}
-          <VisualizationArea />
-
-          {/* Control Panel & Code Panel */}
-          {/* Apply CSS module class for the panels grid container */}
-          <div className={styles.panelsContainer}>
-            <ControlPanel />
-            <CodePanel />
-          </div>
-        </main>
-      </div>
-      <Analytics />
-    </div>
+    <ThemeProvider>
+      <Layout onNavigate={setCurrentPage} currentPage={currentPage}>
+        {currentPage === 'home' ? <HomePage onNavigate={setCurrentPage} /> :
+         currentPage === 'sorting' ? <SortingPage /> : 
+         currentPage === 'searching' ? <SearchingPage /> : 
+         currentPage === 'graph' ? <GraphPage /> :
+         <TreePage />}
+      </Layout>
+    </ThemeProvider>
   );
 }
-
-export default App;

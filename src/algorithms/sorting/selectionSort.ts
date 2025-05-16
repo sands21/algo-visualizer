@@ -1,6 +1,7 @@
 // Define the structure for each step in the visualization (can reuse or define specific if needed)
 // For simplicity, let's reuse the BubbleSortStep structure for now, adapting field usage.
 import { BubbleSortStep as SelectionSortStep } from './bubbleSort'; // Reusing the interface
+import { SortingAlgorithm, SortingAlgorithmContext } from './types';
 
 // Selection Sort algorithm implementation that generates visualization steps
 export function getSelectionSortSteps(array: number[]): SelectionSortStep[] {
@@ -107,3 +108,51 @@ export function getSelectionSortSteps(array: number[]): SelectionSortStep[] {
 
   return steps;
 }
+
+async function selectionSortExecute(
+  { compareElements, swapElements, markSorted, isSorting }: SortingAlgorithmContext,
+  array: number[]
+): Promise<void> {
+  const n = array.length;
+  
+  for (let i = 0; i < n - 1 && isSorting; i++) {
+    let minIndex = i;
+    
+    // Find minimum element in the unsorted portion
+    for (let j = i + 1; j < n && isSorting; j++) {
+      if (await compareElements(minIndex, j)) {
+        minIndex = j;
+      }
+    }
+    
+    // Swap if minimum is not at current position
+    if (minIndex !== i) {
+      await swapElements(i, minIndex);
+    }
+    
+    // Mark current position as sorted
+    markSorted([i]);
+  }
+  
+  // Mark the last element as sorted
+  markSorted([n - 1]);
+  
+  // Mark all elements as sorted at the end
+  const allIndices = Array.from({ length: n }, (_, i) => i);
+  markSorted(allIndices);
+}
+
+export const selectionSort: SortingAlgorithm = {
+  name: 'Selection Sort',
+  description: 
+    'Selection Sort works by repeatedly finding the minimum element from the ' +
+    'unsorted portion of the array and placing it at the beginning of the sorted portion.',
+  timeComplexity: {
+    best: 'O(n²)',
+    average: 'O(n²)',
+    worst: 'O(n²)',
+  },
+  spaceComplexity: 'O(1)',
+  stable: false,
+  execute: selectionSortExecute,
+};

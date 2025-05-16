@@ -3,7 +3,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 // Define the shape of the application state
 interface AppState {
   selectedAlgorithm: string | null;
-  steps: any[];
+  steps: any[]; // Using any[] to accommodate different algorithm step types
   currentStep: number;
   isPlaying: boolean;
   animationSpeed: number;
@@ -41,8 +41,9 @@ import { getMergeSortSteps } from '../algorithms/sorting/mergeSort';
 import { getQuickSortSteps } from '../algorithms/sorting/quickSort';
 import { getLinearSearchSteps } from '../algorithms/searching/linearSearch';
 import { getBinarySearchSteps } from '../algorithms/searching/binarySearch';
-import { getBFSSteps } from '../algorithms/graph/bfs';
-import { getDFSSteps } from '../algorithms/graph/dfs';
+// Commented out unimplemented algorithm imports
+// import { getBFSSteps } from '../algorithms/graph/bfs';
+// import { getDFSSteps } from '../algorithms/graph/dfs';
 
 // Create the provider component
 interface AppProviderProps {
@@ -114,20 +115,12 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   // Function to generate steps for the selected algorithm
   const runAlgorithm = (algo: string) => {
-    let steps: any[] = [];
+    let steps: any[] = []; // Using any[] to accommodate different algorithm step types
     // Use user input if available, otherwise default
     const defaultArray = [5, 2, 9, 1, 6];
     const defaultTarget = 6;
-    const defaultGraph = {
-      0: [1, 2],
-      1: [0, 3],
-      2: [0, 4],
-      3: [1],
-      4: [2],
-    };
     const arr = state.userArray && state.userArray.length > 0 ? state.userArray : defaultArray;
     const target = state.userTarget !== null ? state.userTarget : defaultTarget;
-    const graph = state.userGraph && Object.keys(state.userGraph).length > 0 ? state.userGraph : defaultGraph;
     switch (algo) {
       case 'bubbleSort':
         steps = getBubbleSortSteps(arr);
@@ -150,12 +143,13 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       case 'binarySearch':
         steps = getBinarySearchSteps([...arr].sort((a, b) => a - b), target);
         break;
-      case 'bfs':
-        steps = getBFSSteps(graph, 0);
-        break;
-      case 'dfs':
-        steps = getDFSSteps(graph, 0);
-        break;
+      // Commented out unimplemented algorithms
+      // case 'bfs':
+      //   steps = getBFSSteps(graph, 0);
+      //   break;
+      // case 'dfs':
+      //   steps = getDFSSteps(graph, 0);
+      //   break;
       default:
         steps = [];
     }

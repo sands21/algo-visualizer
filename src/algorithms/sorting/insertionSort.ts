@@ -1,5 +1,6 @@
 // Define the structure for each step in the visualization (reuse BubbleSortStep)
 import { BubbleSortStep as InsertionSortStep } from './bubbleSort';
+import { SortingAlgorithm, SortingAlgorithmContext } from './types';
 
 // Insertion Sort algorithm implementation that generates visualization steps
 export function getInsertionSortSteps(array: number[]): InsertionSortStep[] {
@@ -17,7 +18,7 @@ export function getInsertionSortSteps(array: number[]): InsertionSortStep[] {
   });
 
   for (let i = 1; i < n; i++) {
-    let key = arr[i];
+    const key = arr[i];
     let j = i - 1;
 
     // Highlight the key being inserted
@@ -87,3 +88,50 @@ export function getInsertionSortSteps(array: number[]): InsertionSortStep[] {
 
   return steps;
 }
+
+async function insertionSortExecute(
+  { compareElements, swapElements, markSorted, isSorting }: SortingAlgorithmContext,
+  array: number[]
+): Promise<void> {
+  const n = array.length;
+  
+  // Mark first element as sorted initially
+  markSorted([0]);
+  
+  for (let i = 1; i < n && isSorting; i++) {
+    let j = i;
+    
+    while (j > 0 && isSorting) {
+      // Compare current element with previous element
+      if (await compareElements(j - 1, j)) {
+        await swapElements(j - 1, j);
+        j--;
+      } else {
+        break;
+      }
+    }
+    
+    // Mark current position as sorted
+    markSorted([i]);
+  }
+  
+  // Mark all elements as sorted at the end
+  const allIndices = Array.from({ length: n }, (_, i) => i);
+  markSorted(allIndices);
+}
+
+export const insertionSort: SortingAlgorithm = {
+  name: 'Insertion Sort',
+  description: 
+    'Insertion Sort works by building a sorted array one element at a time, ' +
+    'repeatedly taking the next unsorted element and inserting it into its ' +
+    'correct position in the sorted portion of the array.',
+  timeComplexity: {
+    best: 'O(n)',
+    average: 'O(n²)',
+    worst: 'O(n²)',
+  },
+  spaceComplexity: 'O(1)',
+  stable: true,
+  execute: insertionSortExecute,
+};

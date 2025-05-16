@@ -1,80 +1,103 @@
 # Algorithm Visualizer
 
-A web application built with React and TypeScript to visualize common sorting, searching, and graph algorithms interactively. See algorithms come to life step-by-step!
+An interactive platform built with React, TypeScript, and Tailwind CSS to visualize various algorithms like sorting, searching, graph, and tree algorithms. This project aims to provide a clear, step-by-step understanding of how these algorithms work through engaging animations and a modern user interface.
 
-## Features
+## ✨ Features
 
-*   **Algorithm Visualization:** Understand how different algorithms work by watching them execute on sample data.
-*   **Supported Algorithms:**
-    *   **Sorting:** Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort
-    *   **Searching:** Linear Search, Binary Search
-    *   **Graph:** Breadth-First Search (BFS), Depth-First Search (DFS)
-*   **Interactive Controls:**
-    *   Generate new random data sets.
-    *   Control execution: Play, Pause, Step Forward.
-    *   Adjust visualization speed.
-*   **Code Display:** See the corresponding code for the currently selected algorithm.
-*   **Responsive Design:** Adapts to different screen sizes for usability on desktop and mobile devices.
-*   **Dark Mode:** Switch between light and dark themes for comfortable viewing.
+- **Interactive Landing Page**: A modern, animated introduction to the visualizer.
+- **Algorithm Categories**:
+  - Sorting (e.g., Bubble Sort, Merge Sort, Quick Sort)
+  - Searching (e.g., Linear Search, Binary Search)
+  - Graph Algorithms (e.g., Dijkstra's, A\*)
+  - Tree Algorithms (e.g., Traversals, Balancing)
+- **Step-by-step Visualization**: Clearly see each step of the algorithm execution.
+- **Control Panel**: Adjust animation speed, input data, and other parameters.
+- **Responsive Design**: Works smoothly on various screen sizes.
+- **Dark Mode**: Switch between light and dark themes for comfortable viewing.
+- **Modern Aesthetics**: Clean UI with smooth animations using Framer Motion.
 
-## Tech Stack
+## 🛠️ Technologies Used
 
-*   **Frontend:** React, TypeScript
-*   **Build Tool:** Vite
-*   **Styling:** CSS Modules
-*   **State Management:** React Context API
+- **Frontend**: React, TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Build Tool**: Vite
+- **Linting**: ESLint
+- **Package Manager**: npm
 
-## Getting Started
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-*   Node.js (v18 or later recommended)
-*   npm (usually comes with Node.js) or yarn
+- Node.js (v18.x or higher recommended)
+- npm (usually comes with Node.js)
 
 ### Installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your-repository-url>
-    ```
-    *(Replace `<your-repository-url>` with the actual URL)*
-2.  **Navigate to the project directory:**
-    ```bash
-    cd algo-visualizer
-    ```
-3.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-    *or*
-    ```bash
-    yarn install
-    ```
+1. **Clone the repository:**
 
-### Running the Application
+   ```bash
+   git clone https://github.com/sands21/algo-visualizer.git
+   cd algo-visualizer
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To start the development server, run:
 
 ```bash
 npm run dev
 ```
-*or*
+
+This will typically open the application in your default browser at `http://localhost:5173` (or another port if 5173 is in use).
+
+### Building for Production
+
+To create a production build, run:
+
 ```bash
-yarn dev
+npm run build
 ```
 
-This will start the development server, typically at `http://localhost:5173`. Open this URL in your web browser.
+The build artifacts will be stored in the `dist/` directory.
 
-## How to Use
+## 📖 How to Use
 
-1.  **Select an Algorithm:** Use the sidebar on the left to choose the algorithm category (Sorting, Searching, Graph) and then the specific algorithm you want to visualize.
-2.  **Generate Data:** Click the "Generate New Array" (or similar) button in the Control Panel to create a dataset.
-3.  **Control Visualization:**
-    *   Use the **Play/Pause** button to start or stop the automatic execution.
-    *   Use the **Step Forward** button to advance the algorithm one step at a time.
-    *   Adjust the **Speed** slider to control how fast the visualization runs.
-4.  **Observe:**
-    *   Watch the **Visualization Area** to see the algorithm manipulate the data structure.
-    *   Follow along with the highlighted lines in the **Code Panel** to see the corresponding code execution.
+1.  Navigate to the landing page to get an overview of the available algorithm categories.
+2.  Click on "Start Exploring" or select a specific algorithm category (Sorting, Searching, Graph, Tree) from the navigation or the cards.
+3.  On an algorithm page:
+    - Select a specific algorithm from the dropdown menu.
+    - (If applicable) Input your own data or use the randomly generated data.
+    - Adjust the visualization speed using the slider.
+    - Click the "Visualize" or "Start" button to begin the animation.
+    - Observe the step-by-step execution of the algorithm.
+    - Use the control buttons (play, pause, reset) as needed.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgements
+
+- Inspiration from various algorithm visualization tools online.
+- Framer Motion for the smooth animations.
+- Tailwind CSS for the utility-first styling.
 
 ---
-
-*(Optional: Add sections for Screenshots, Contributing Guidelines, or License information here if desired.)*

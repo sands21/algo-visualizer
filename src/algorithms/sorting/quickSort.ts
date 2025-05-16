@@ -1,5 +1,6 @@
 // Define the structure for each step in the visualization (reuse BubbleSortStep)
 import { BubbleSortStep as QuickSortStep } from './bubbleSort';
+import { SortingAlgorithm, SortingAlgorithmContext } from './types';
 
 // Helper to clone arrays deeply for step recording
 function deepClone(arr: number[]): number[] {
@@ -129,3 +130,67 @@ export function getQuickSortSteps(array: number[]): QuickSortStep[] {
 
   return steps;
 }
+
+async function quickSortExecute(
+  { compareElements, swapElements, markSorted, isSorting }: SortingAlgorithmContext,
+  array: number[]
+): Promise<void> {
+  const n = array.length;
+
+  async function partition(start: number, end: number): Promise<number> {
+    const pivotIndex = end;
+    let i = start;
+
+    for (let j = start; j < end; j++) {
+      if (!isSorting) break;
+      
+      if (await compareElements(j, pivotIndex)) {
+        if (i !== j) {
+          await swapElements(i, j);
+        }
+        i++;
+      }
+    }
+
+    if (i !== pivotIndex) {
+      await swapElements(i, pivotIndex);
+    }
+    
+    markSorted([i]); // Mark pivot position as sorted
+    return i;
+  }
+
+  async function quickSort(start: number, end: number): Promise<void> {
+    if (start >= end || !isSorting) return;
+
+    const pivotIndex = await partition(start, end);
+    
+    await quickSort(start, pivotIndex - 1);
+    await quickSort(pivotIndex + 1, end);
+  }
+
+  await quickSort(0, n - 1);
+  
+  // Mark any remaining unsorted elements
+  const remainingElements = Array.from(
+    { length: n },
+    (_, index) => index
+  );
+  markSorted(remainingElements);
+}
+
+export const quickSort: SortingAlgorithm = {
+  name: 'Quick Sort',
+  description: 
+    'Quick Sort is a divide-and-conquer algorithm that works by selecting a pivot ' +
+    'element and partitioning the array around it, such that elements smaller than ' +
+    'the pivot are moved to the left and larger elements to the right.',
+  timeComplexity: {
+    best: 'O(n log n)',
+    average: 'O(n log n)',
+    worst: 'O(n²)',
+  },
+  spaceComplexity: 'O(log n)',
+  stable: false,
+  execute: quickSortExecute,
+};

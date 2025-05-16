@@ -1,3 +1,5 @@
+import { SortingAlgorithm, SortingAlgorithmContext } from './types';
+
 // Define the structure for each step in the visualization
 export interface BubbleSortStep {
   array: number[]; // Current state of the array
@@ -107,3 +109,58 @@ export function getBubbleSortSteps(array: number[]): BubbleSortStep[] {
 
   return steps;
 }
+
+async function bubbleSortExecute(
+  { compareElements, swapElements, markSorted, isSorting }: SortingAlgorithmContext,
+  array: number[]
+): Promise<void> {
+  const n = array.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    if (!isSorting) break;
+
+    let swapped = false;
+    
+    // One pass through the array
+    for (let j = 0; j < n - i - 1; j++) {
+      if (!isSorting) break;
+
+      // Compare adjacent elements
+      if (await compareElements(j, j + 1)) {
+        // Swap them if they are in wrong order
+        await swapElements(j, j + 1);
+        swapped = true;
+      }
+    }
+
+    // Mark the last element in this pass as sorted
+    markSorted([n - i - 1]);
+
+    // If no swapping occurred, array is sorted
+    if (!swapped) {
+      // Mark all remaining elements as sorted
+      const remainingElements = Array.from(
+        { length: n - i - 1 }, 
+        (_, index) => index
+      );
+      markSorted(remainingElements);
+      break;
+    }
+  }
+}
+
+export const bubbleSort: SortingAlgorithm = {
+  name: 'Bubble Sort',
+  description: 
+    'Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, ' +
+    'compares adjacent elements and swaps them if they are in the wrong order. ' +
+    'The pass through the list is repeated until no swaps are needed.',
+  timeComplexity: {
+    best: 'O(n)',
+    average: 'O(n²)',
+    worst: 'O(n²)',
+  },
+  spaceComplexity: 'O(1)',
+  stable: true,
+  execute: bubbleSortExecute,
+};
