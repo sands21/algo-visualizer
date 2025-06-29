@@ -43,6 +43,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         onAnimationEnd: onAnimationEnd,
         onAnimationIteration: onAnimationIteration,
       }),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...(rest as any), 
     };
     
@@ -50,6 +51,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         ref: ref,
         className: `card ${className}`,
         children: children,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(rest as any), 
     };
 

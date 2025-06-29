@@ -10,7 +10,7 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-html[data-theme='dark'] .visualizationArea {
+html[data-theme="dark"] .visualizationArea {
   background-color: #1e293b; /* dark:bg-slate-800 */
   border-color: #334155; /* dark:border-slate-700 */
 }
@@ -40,7 +40,7 @@ html[data-theme='dark'] .visualizationArea {
   margin-bottom: 1.5rem; /* mb-6 */
 }
 
-html[data-theme='dark'] .placeholderIcon {
+html[data-theme="dark"] .placeholderIcon {
   color: #475569; /* dark:text-slate-600 */
 }
 
@@ -50,7 +50,7 @@ html[data-theme='dark'] .placeholderIcon {
   font-weight: 500; /* font-medium */
 }
 
-html[data-theme='dark'] .placeholderTextLarge {
+html[data-theme="dark"] .placeholderTextLarge {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -60,7 +60,7 @@ html[data-theme='dark'] .placeholderTextLarge {
   margin-top: 0.75rem; /* mt-3 */
 }
 
-html[data-theme='dark'] .placeholderTextSmall {
+html[data-theme="dark"] .placeholderTextSmall {
   color: #64748b; /* dark:text-slate-500 */
 }
 
@@ -82,7 +82,7 @@ html[data-theme='dark'] .placeholderTextSmall {
   color: #1e293b; /* text-slate-800 */
 }
 
-html[data-theme='dark'] .title {
+html[data-theme="dark"] .title {
   color: #ffffff; /* dark:text-white */
 }
 
@@ -97,7 +97,7 @@ html[data-theme='dark'] .title {
   margin-right: 1rem; /* mr-4 */
 }
 
-html[data-theme='dark'] .progressText {
+html[data-theme="dark"] .progressText {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -109,7 +109,7 @@ html[data-theme='dark'] .progressText {
   overflow: hidden;
 }
 
-html[data-theme='dark'] .progressBarBackground {
+html[data-theme="dark"] .progressBarBackground {
   background-color: #334155; /* dark:bg-slate-700 */
 }
 
@@ -135,7 +135,7 @@ html[data-theme='dark'] .progressBarBackground {
   color: #94a3b8; /* text-slate-400 */
 }
 
-html[data-theme='dark'] .noStepsText {
+html[data-theme="dark"] .noStepsText {
   color: #64748b; /* dark:text-slate-500 */
 }
 
@@ -180,7 +180,7 @@ html[data-theme='dark'] .noStepsText {
   background-color: #f1f5f9; /* bg-slate-100 */
 }
 
-html[data-theme='dark'] .graphContainer {
+html[data-theme="dark"] .graphContainer {
   background-color: #334155; /* dark:bg-slate-700 */
   border-color: #475569;
 }
@@ -209,7 +209,8 @@ html[data-theme='dark'] .graphContainer {
   gap: 1rem; /* gap-4 */
 }
 
-@media (min-width: 768px) { /* md:grid-cols-3 */
+@media (min-width: 768px) {
+  /* md:grid-cols-3 */
   .infoGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -242,19 +243,19 @@ html[data-theme='dark'] .graphContainer {
 .targetBox {
   background-color: #eef2ff; /* bg-indigo-50 */
 }
-html[data-theme='dark'] .targetBox {
+html[data-theme="dark"] .targetBox {
   background-color: rgba(67, 56, 202, 0.3); /* dark:bg-indigo-900/30 */
 }
 .targetLabel {
   color: #4338ca; /* text-indigo-500 */
 }
-html[data-theme='dark'] .targetLabel {
+html[data-theme="dark"] .targetLabel {
   color: #a5b4fc; /* dark:text-indigo-300 */
 }
 .targetValue {
   color: #4338ca; /* text-indigo-700 */
 }
-html[data-theme='dark'] .targetValue {
+html[data-theme="dark"] .targetValue {
   color: #a5b4fc; /* dark:text-indigo-300 */
 }
 
@@ -262,19 +263,19 @@ html[data-theme='dark'] .targetValue {
 .queueBox {
   background-color: #f5f3ff; /* bg-purple-50 */
 }
-html[data-theme='dark'] .queueBox {
+html[data-theme="dark"] .queueBox {
   background-color: rgba(126, 34, 206, 0.3); /* dark:bg-purple-900/30 */
 }
 .queueLabel {
   color: #7e22ce; /* text-purple-500 */
 }
-html[data-theme='dark'] .queueLabel {
+html[data-theme="dark"] .queueLabel {
   color: #c4b5fd; /* dark:text-purple-300 */
 }
 .queueValue {
   color: #6b21a8; /* text-purple-700 */
 }
-html[data-theme='dark'] .queueValue {
+html[data-theme="dark"] .queueValue {
   color: #c4b5fd; /* dark:text-purple-300 */
 }
 
@@ -282,19 +283,19 @@ html[data-theme='dark'] .queueValue {
 .stackBox {
   background-color: #fffbeb; /* bg-amber-50 */
 }
-html[data-theme='dark'] .stackBox {
+html[data-theme="dark"] .stackBox {
   background-color: rgba(180, 83, 9, 0.3); /* dark:bg-amber-900/30 */
 }
 .stackLabel {
   color: #b45309; /* text-amber-500 */
 }
-html[data-theme='dark'] .stackLabel {
+html[data-theme="dark"] .stackLabel {
   color: #fcd34d; /* dark:text-amber-300 */
 }
 .stackValue {
   color: #92400e; /* text-amber-700 */
 }
-html[data-theme='dark'] .stackValue {
+html[data-theme="dark"] .stackValue {
   color: #fcd34d; /* dark:text-amber-300 */
 }
 
@@ -307,7 +308,7 @@ html[data-theme='dark'] .stackValue {
   background-color: #f8fafc; /* bg-slate-50 */
 }
 
-html[data-theme='dark'] .descriptionBox {
+html[data-theme="dark"] .descriptionBox {
   border-color: #334155; /* dark:border-slate-700 */
   background-color: rgba(30, 41, 59, 0.5); /* dark:bg-slate-800/50 */
 }
@@ -316,7 +317,7 @@ html[data-theme='dark'] .descriptionBox {
   color: #334155; /* text-slate-700 */
 }
 
-html[data-theme='dark'] .descriptionText {
+html[data-theme="dark"] .descriptionText {
   color: #cbd5e1; /* dark:text-slate-300 */
 }
 
@@ -334,7 +335,7 @@ html[data-theme='dark'] .descriptionText {
   stroke: #cbd5e1; /* slate-300 */
   stroke-width: 1.5;
 }
-html[data-theme='dark'] .graphEdge {
+html[data-theme="dark"] .graphEdge {
   stroke: #475569; /* slate-600 */
 }
 
@@ -344,7 +345,7 @@ html[data-theme='dark'] .graphEdge {
   fill: #ffffff; /* white */
   transition: fill 0.2s, stroke 0.2s;
 }
-html[data-theme='dark'] .graphNode {
+html[data-theme="dark"] .graphNode {
   fill: #1e293b; /* slate-800 */
   stroke: #818cf8; /* indigo-400 */
 }
@@ -353,7 +354,7 @@ html[data-theme='dark'] .graphNode {
   stroke: #64748b; /* slate-500 */
   fill: #f1f5f9; /* slate-100 */
 }
-html[data-theme='dark'] .graphNodeVisited {
+html[data-theme="dark"] .graphNodeVisited {
   stroke: #475569; /* slate-600 */
   fill: #334155; /* slate-700 */
 }
@@ -363,11 +364,10 @@ html[data-theme='dark'] .graphNodeVisited {
   stroke-width: 3;
   fill: #fef3c7; /* yellow-100 */
 }
-html[data-theme='dark'] .graphNodeCurrent {
+html[data-theme="dark"] .graphNodeCurrent {
   stroke: #fcd34d; /* yellow-300 */
   fill: #422006; /* amber-900 approximation */
 }
-
 
 .graphNodeText {
   font-family: monospace;
@@ -378,21 +378,22 @@ html[data-theme='dark'] .graphNodeCurrent {
   pointer-events: none; /* Prevent text from blocking node clicks if added later */
   user-select: none;
 }
-html[data-theme='dark'] .graphNodeText {
+html[data-theme="dark"] .graphNodeText {
   fill: #c7d2fe; /* indigo-300 */
 }
 
-html[data-theme='dark'] .graphNodeVisited .graphNodeText {
- fill: #64748b; /* slate-500 */
+html[data-theme="dark"] .graphNodeVisited .graphNodeText {
+  fill: #64748b; /* slate-500 */
 }
 
-html[data-theme='dark'] .graphNodeCurrent .graphNodeText {
- fill: #fcd34d; /* yellow-300 */
+html[data-theme="dark"] .graphNodeCurrent .graphNodeText {
+  fill: #fcd34d; /* yellow-300 */
 }
 
 /* --- Responsive Adjustments --- */
 
-@media (max-width: 639px) { /* sm breakpoint */
+@media (max-width: 639px) {
+  /* sm breakpoint */
   .title {
     font-size: 1.25rem; /* text-xl */
   }

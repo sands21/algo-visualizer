@@ -10,7 +10,7 @@
   flex-direction: column; /* flex-col */
 }
 
-html[data-theme='dark'] .codePanel {
+html[data-theme="dark"] .codePanel {
   background-color: #1e293b; /* dark:bg-slate-800 */
   border-color: #334155; /* dark:border-slate-700 */
 }
@@ -23,7 +23,7 @@ html[data-theme='dark'] .codePanel {
   flex-shrink: 0; /* flex-shrink-0 */
 }
 
-html[data-theme='dark'] .title {
+html[data-theme="dark"] .title {
   color: #ffffff; /* dark:text-white */
 }
 
@@ -48,10 +48,9 @@ html[data-theme='dark'] .title {
   background-color: #cbd5e1; /* scrollbar color */
   border-radius: 3px;
 }
-html[data-theme='dark'] .scrollableContent::-webkit-scrollbar-thumb {
+html[data-theme="dark"] .scrollableContent::-webkit-scrollbar-thumb {
   background-color: #475569; /* dark scrollbar color */
 }
-
 
 .description {
   margin-bottom: 1rem; /* mb-4 */
@@ -59,7 +58,7 @@ html[data-theme='dark'] .scrollableContent::-webkit-scrollbar-thumb {
   color: #475569; /* text-slate-600 */
 }
 
-html[data-theme='dark'] .description {
+html[data-theme="dark"] .description {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -70,7 +69,7 @@ html[data-theme='dark'] .description {
   box-shadow: inset 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-inner */
 }
 
-html[data-theme='dark'] .pseudocodeContainer {
+html[data-theme="dark"] .pseudocodeContainer {
   background-color: rgba(15, 23, 42, 0.5); /* dark:bg-slate-900/50 */
 }
 
@@ -80,7 +79,7 @@ html[data-theme='dark'] .pseudocodeContainer {
   border-bottom: 1px solid #e2e8f0; /* border-b border-slate-200 */
 }
 
-html[data-theme='dark'] .pseudocodeHeader {
+html[data-theme="dark"] .pseudocodeHeader {
   background-color: rgba(51, 65, 85, 0.5); /* dark:bg-slate-700/50 */
   border-bottom-color: #334155; /* dark:border-slate-700 */
 }
@@ -93,7 +92,7 @@ html[data-theme='dark'] .pseudocodeHeader {
   letter-spacing: 0.05em; /* tracking-wider */
 }
 
-html[data-theme='dark'] .pseudocodeTitle {
+html[data-theme="dark"] .pseudocodeTitle {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -113,7 +112,7 @@ html[data-theme='dark'] .pseudocodeTitle {
   color: #334155; /* text-slate-700 */
 }
 
-html[data-theme='dark'] .codeLine {
+html[data-theme="dark"] .codeLine {
   color: #cbd5e1; /* dark:text-slate-300 */
 }
 
@@ -123,7 +122,7 @@ html[data-theme='dark'] .codeLine {
   color: #4338ca; /* text-indigo-700 */
 }
 
-html[data-theme='dark'] .codeLineHighlighted {
+html[data-theme="dark"] .codeLineHighlighted {
   color: #a5b4fc; /* dark:text-indigo-300 */
 }
 
@@ -136,7 +135,7 @@ html[data-theme='dark'] .codeLineHighlighted {
   user-select: none; /* select-none */
 }
 
-html[data-theme='dark'] .lineNumber {
+html[data-theme="dark"] .lineNumber {
   color: #64748b; /* dark:text-slate-500 */
 }
 
@@ -145,7 +144,7 @@ html[data-theme='dark'] .lineNumber {
   font-style: italic;
 }
 
-html[data-theme='dark'] .placeholderText {
+html[data-theme="dark"] .placeholderText {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -156,7 +155,7 @@ html[data-theme='dark'] .placeholderText {
   border: 1px solid #e0e7ff; /* border border-indigo-100 */
 }
 
-html[data-theme='dark'] .stepExplanationCard {
+html[data-theme="dark"] .stepExplanationCard {
   background-color: rgba(67, 56, 202, 0.3); /* dark:bg-indigo-900/30 */
   border-color: rgba(49, 46, 129, 0.5); /* dark:border-indigo-800/50 */
 }
@@ -168,7 +167,7 @@ html[data-theme='dark'] .stepExplanationCard {
   margin-bottom: 0.5rem; /* mb-2 */
 }
 
-html[data-theme='dark'] .stepExplanationTitle {
+html[data-theme="dark"] .stepExplanationTitle {
   color: #a5b4fc; /* dark:text-indigo-300 */
 }
 
@@ -177,7 +176,7 @@ html[data-theme='dark'] .stepExplanationTitle {
   color: #3730a3; /* text-indigo-800 */
 }
 
-html[data-theme='dark'] .stepExplanationText {
+html[data-theme="dark"] .stepExplanationText {
   color: #a5b4fc; /* dark:text-indigo-300 */
 }
 
@@ -186,7 +185,7 @@ html[data-theme='dark'] .stepExplanationText {
   color: #4f46e5; /* text-indigo-600 */
 }
 
-html[data-theme='dark'] .stepExplanationPlaceholder {
+html[data-theme="dark"] .stepExplanationPlaceholder {
   color: #c7d2fe; /* dark:text-indigo-400 */
 }
 
@@ -196,7 +195,8 @@ html[data-theme='dark'] .stepExplanationPlaceholder {
   gap: 0.75rem; /* gap-3 */
 }
 
-@media (min-width: 640px) { /* sm:grid-cols-2 */
+@media (min-width: 640px) {
+  /* sm:grid-cols-2 */
   .complexityGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -208,7 +208,7 @@ html[data-theme='dark'] .stepExplanationPlaceholder {
   border-radius: 0.5rem; /* rounded-lg */
 }
 
-html[data-theme='dark'] .complexityBox {
+html[data-theme="dark"] .complexityBox {
   background-color: rgba(51, 65, 85, 0.5); /* dark:bg-slate-700/50 */
 }
 
@@ -221,7 +221,7 @@ html[data-theme='dark'] .complexityBox {
   letter-spacing: 0.05em; /* tracking-wider */
 }
 
-html[data-theme='dark'] .complexityTitle {
+html[data-theme="dark"] .complexityTitle {
   color: #94a3b8; /* dark:text-slate-400 */
 }
 
@@ -231,13 +231,14 @@ html[data-theme='dark'] .complexityTitle {
   color: #334155; /* text-slate-700 */
 }
 
-html[data-theme='dark'] .complexityValue {
+html[data-theme="dark"] .complexityValue {
   color: #cbd5e1; /* dark:text-slate-300 */
 }
 
 /* --- Responsive Adjustments --- */
 
-@media (max-width: 639px) { /* sm breakpoint */
+@media (max-width: 639px) {
+  /* sm breakpoint */
   .codePanel {
     padding: 1rem; /* p-4 */
   }
