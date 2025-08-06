@@ -241,6 +241,10 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
         initial="hidden"
         animate="visible"
         className="relative z-10"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 10% 0%, rgba(17,24,39,0.6) 0%, rgba(0,0,0,0) 60%), radial-gradient(1200px 600px at 90% 10%, rgba(12,20,35,0.5) 0%, rgba(0,0,0,0) 60%)",
+        }}
       >
         {/* Hero Section */}
         <motion.section className="relative pt-3 pb-12 px-4 sm:px-6 lg:px-8">
